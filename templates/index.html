@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MyDiary</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header>
+       <h1>📖 My Diary</h1>
+
+<p class="subtitle">My personal digital journal</p>
+          <div class="search-box">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search diary..."
+    >
+
+    <button id="searchButton">
+        🔍 Search
+    </button>
+    <button id="clearSearchButton">
+    ✕ Clear
+</button>
+<button id="calendarButton">
+    📅 Calendar
+</button>
+
+</div>
+        <button id="newPageButton">
+            + New Page
+        </button>
+        <button id="logoutButton">
+    🔒 Logout
+</button>
+        
+    </header>
+
+
+    <main>
+
+        <div class="book">
+
+            <!-- LEFT PAGE -->
+
+            <section class="page">
+
+                <div class="page-number">
+                    Page 1
+                </div>
+
+             <div id="leftPage" contenteditable="true">
+    Loading...
+</div>
+
+            </section>
+
+
+            <!-- RIGHT PAGE -->
+
+            <section class="page">
+
+                <div class="page-number">
+                    Page 2
+                </div>
+
+                <div id="rightPage" contenteditable="true">
+    Loading...
+</div>
+
+            </section>
+
+        </div>
+
+
+        <div class="navigation">
+         <span id="pageCounter"></span>
+    <button id="previousButton">
+        ← Previous
+    </button>
+
+    <button id="saveButton">
+        💾 Save
+    </button>
+    
+
+    <button id="nextButton">
+        Next →
+    </button>
+
+</div>
+
+    </main>
+<div id="calendarModal" class="calendar-modal">
+
+    <div class="calendar-box">
+
+        <button id="closeCalendarButton" class="close-calendar">
+            ✕
+        </button>
+
+        <h2>📅 My Diary Calendar</h2>
+
+        <div class="calendar-header">
+
+            <button id="previousMonth">
+                ◀
+            </button>
+
+            <h3 id="calendarMonth"></h3>
+
+            <button id="nextMonth">
+                ▶
+            </button>
+
+        </div>
+
+        <div id="calendar"></div>
+
+    </div>
+
+</div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
